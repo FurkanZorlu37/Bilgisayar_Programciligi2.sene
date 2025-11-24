@@ -1,0 +1,90 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "First one: // Random sayıoyunu 1/100"
+      ],
+      "metadata": {
+        "id": "_I74lOeaphqw"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random;\n",
+        "random_number = random.randint(1, 100)\n",
+        "\n",
+        "print(\"Selamlar 1'den 100'e bir sayı tahmin et :D\")\n",
+        "deneme_sayisi = 0\n",
+        "max_deneme = 7\n",
+        "\n",
+        "while True:\n",
+        "    deneme_sayisi += 1\n",
+        "    if deneme_sayisi > max_deneme:\n",
+        "        print(f\"Deneme hakkınız bitti! Doğru sayı {random_number} idi.\")\n",
+        "        break\n",
+        "\n",
+        "    try:\n",
+        "        kullanici_tahmini = int(input(f\"Lütfen bir sayı girin (Deneme {deneme_sayisi}/{max_deneme}): \"))\n",
+        "    except ValueError:\n",
+        "        print(\"Hatalı giriş yaptınız. Lütfen geçerli bir sayı girin.\\n\")\n",
+        "        deneme_sayisi -= 1\n",
+        "        continue\n",
+        "\n",
+        "    if kullanici_tahmini == random_number:\n",
+        "        print(f\"Tebrikler bildiniz! {deneme_sayisi} denemede buldunuz.\\nSayınız:{random_number}\")\n",
+        "        break;\n",
+        "    elif kullanici_tahmini > random_number:\n",
+        "        print(\"Daha küçük bir sayı deneyin.\")\n",
+        "    else:\n",
+        "        print(\"Daha büyük bir sayı deneyin.\")\n"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "uRWchmjEuavd",
+        "outputId": "e04aba75-ed88-4f45-f32d-1b1d6a028142"
+      },
+      "execution_count": 57,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Selamlar 1'den 100'e bir sayı tahmin et :D\n",
+            "Lütfen bir sayı girin (Deneme 1/7): 7\n",
+            "Daha büyük bir sayı deneyin.\n",
+            "Lütfen bir sayı girin (Deneme 2/7): 77\n",
+            "Tebrikler bildiniz! 2 denemede buldunuz.\n",
+            "Sayınız:77\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "L6YkwpqVwtRE"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
